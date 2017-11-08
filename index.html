@@ -6,7 +6,8 @@
   <title>Carlos and Laura's Wedding!</title>
   <link rel="canonical" href="https://www.carlosandlauraswedding.com/" />
   <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-  <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+  <link href='http://fonts.googleapis.com/css?family=Rouge+Script&text=1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz!%3F%20' rel='stylesheet' type='text/css' />
+  <link href='http://fonts.googleapis.com/css?family=Goudy+Bookletter+1911&text=1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz!%3F%20' rel='stylesheet' type='text/css' />
   <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
   <style amp-custom>
   :root {
@@ -18,20 +19,20 @@
     padding: 0;
   }
   body {
-    font-family: Verdana, Geneva, sans-serif;
+    font-family: "Goudy Bookletter 1911", Geneva, sans-serif;
+    font-size: 125%;
     background-image: radial-gradient(circle at top, lavender 0, #fff 100%);
+    text-align: center;
   }
   main {
     margin: auto;
     max-width: 768px;
-    padding: var(--main-padding);
+    padding: 0 var(--main-padding);
   }
-  amp-img {
-    margin: 0 calc(-1 * var(--main-padding));
-  }
+
   h1, h2, h3, h4, h5, h6 {
     font-size: 2em;
-    font-family: Quicksand, Verdana, sans-serif;
+    margin: 20px 0 0;
   }
 
   @media (min-width: 640px) {
@@ -40,20 +41,62 @@
     }
   }
 
+  p {
+    margin: 10px 0;
+  }
+
   ul {
     display: flex;
     flex-flow: row nowrap;
     list-style: none;
-
   }
 
-  li {
+  nav li {
     flex: 1 0 0;
+    text-align: center;
+    padding: 10px 5px;
+  }
+
+  .cursive {
+    font-family: 'Rouge Script', cursive;
+  }
+
+  @media (min-width: 640px) {
+    .cursive {
+      font-size: 5vw;
+    }
+  }
+
+  .post-card {
+    display: flex;
+  }
+
+  .post-card amp-img {
+    flex: 1 0 0;
+  }
+
+  .center {
     text-align: center;
   }
 
-  li:last-child {
-    margin-left: 5%;
+  .date, .city {
+    font-size: 150%;
+  }
+  .date-and-place {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-around;
+  }
+  .flight-tables {
+    display: flex;
+    justify-content: center;
+  }
+  .flight-tables table {
+    margin: 10px;
+  }
+
+  td {
+    padding: 10px;s
   }
   </style>
 </head>
@@ -61,23 +104,56 @@
   <main>
     <nav>
       <ul>
-        <li><a href="#about">About</a></li>
+        <li><a href="#wedding">Wedding</a></li>
+        <li><a href="#about-us">About us</a></li>
         <li><a href="#venue">Venue</a></li>
         <li><a href="#travel">Travel</a></li>
-        <li><a href="#fun">Fun</a></li>
-        <li><a href="#rsvp">RSVP</a></li>
+        <li><a href="#things-to-do">Things to do</a></li>
+        <li><a href="#registry">Registry</a></li>
       </ul>
     </nav>
-    <section>
-      <h1>Our wedding 🎩👰🏼</h1>
-      <amp-img src="/img/sutro-baths.jpg" layout="responsive" width="400" height="200">
-        <noscript><img src="/img/sutro-baths.jpg" /></noscript>
-      </amp-img>
-    <section>
 
-    <section id="about">
-      <h2>About</h2>
-      <p>Carlos and Laura were both born in log cabins in Illinois and went on to be raised by wolves and captains of industry</p>
+    <section class="center">
+      <div class="post-card">
+        <amp-img class="post-card-image" src="/img/beach-peeps.jpg" layout="responsive" width="2" height="3">
+          <noscript><img src="/img/beach-peeps.jpg" /></noscript>
+        </amp-img>
+
+        <amp-img class="post-card-image" src="/img/kiss-peeps.jpg" layout="responsive" width="2" height="3">
+          <noscript><img src="/img/kiss-peeps.jpg" /></noscript>
+        </amp-img>
+
+        <amp-img class="post-card-image" src="/img/tree-peeps.jpg" layout="responsive" width="2" height="3">
+          <noscript><img src="/img/tree-peeps.jpg" /></noscript>
+        </amp-img>
+      </div>
+      <h1 class="cursive">Laura & Carlos</h1>
+      <div class="date-and-place">
+        <p class="date">8·25·18</p>
+        <p class="city">Fredericksburg, VA</p>
+      </div>
+    </section>
+
+    <section id="wedding">
+      <h2>Our Wedding</h2>
+      <p>
+        The ceremony and reception will take place at
+        <a href="#">The Inn at the Old Silk Mill</a>
+        in downtown Fredericksburg.
+        The ceremony will begin at 5pm and a reception will follow
+        immediately afterward.
+      </p>
+      <p>Please wear whatever makes you feel most galmorous and comfortable!</p>
+    </section>
+
+    <section id="about-us">
+      <h2>About us</h2>
+
+    </section>
+
+    <section id="venue">
+      <h2>Venue</h2>
+
     </section>
 
     <section id="travel">
@@ -87,32 +163,39 @@
       <h2>Travel</h2>
       <p>The wedding will be at 5pm on Saturday! Keep this in mind when planning your flights.</p>
       <p>Dulles and Richmond are the closest airports</p>
-      <p><a href="https://www.google.com/maps/dir/IAD/Fredericksburg,+VA">IAD ✈ Fredericksburg, VA</a></p>
-      <p>
-        <div>Pros:<ul><li>More direct flights</li></ul></div>
-        <div>Cons:<ul><li>Traffic can be worse</li></ul></div>
-      </p>
-      <p><a href="https://www.google.com/maps/dir/KRIC/Fredericksburg,+VA">RIC ✈ Fredericksburg, VA</a></p>
-      <p>
-        <div>Pros:<ul><li>Traffic can be better</li></ul></div>
-        <div>Cons:<ul><li>Fewer direct flights</li></ul></div>
-      </p>
+      <div class="flight-tables">
+        <table>
+          <thead>
+              <tr><th colspan="2"><a href="https://www.google.com/maps/dir/IAD/Fredericksburg,+VA">IAD ✈ Fredericksburg, VA</a></th></tr>
+              <tr><th>Pros</th><th>Cons</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>More direct flights</td><td>Traffic can be worse</td></tr>
+          </tbody>
+        </table>
+
+        <table>
+          <thead>
+              <tr><th colspan="2"><a href="https://www.google.com/maps/dir/KRIC/Fredericksburg,+VA">RIC ✈ Fredericksburg, VA</a></th></tr>
+              <tr><th>Pros</th><th>Cons</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Traffic can be better</td><td>Fewer direct flights</td></tr>
+          </tbody>
+        </table>
+      </div>
     </section>
 
-    <section id="wedding">
-      <h2>Wedding</h2>
 
-    </section>
-
-    <section id="fun">
+    <section id="things-to-do">
       <amp-img src="/img/the-band.jpg" layout="responsive" width="400" height="200">
         <noscript><img src="/img/the-band.jpg" /></noscript>
       </amp-img>
-      <h2>Fun</h2>
+      <h2>Things to do</h2>
     </section>
 
-    <section id="rsvp">
-      <h2>RSVP</h2>
+    <section id="registry">
+      <h2>Registry</h2>
     </section>
   </main>
 </body>
