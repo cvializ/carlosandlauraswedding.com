@@ -6,8 +6,8 @@
   <title>Carlos and Laura's Wedding!</title>
   <link rel="canonical" href="https://www.carlosandlauraswedding.com/" />
   <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-  <link href="http://fonts.googleapis.com/css?family=Rouge+Script&text=1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz!%3F%20()—’,.:" rel="stylesheet" type="text/css" />
-  <link href="http://fonts.googleapis.com/css?family=Goudy+Bookletter+1911&text=1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz!%3F%20()—’,.:" rel="stylesheet" type="text/css" />
+  <link href="http://fonts.googleapis.com/css?family=Rouge+Script&text=LaurndClos%26%20" rel="stylesheet" type="text/css" />
+  <link href="http://fonts.googleapis.com/css?family=Goudy+Bookletter+1911&text=1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz!%3F%26%20()—’,.:" rel="stylesheet" type="text/css" />
   <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
   <style amp-custom>
   :root {
@@ -84,13 +84,17 @@
     background-image: url(img/blobs/blob1.png);/*, linear-gradient(rgba(255, 255, 255, .5), rgba(255, 255, 255, 0), rgba(255, 255, 255, .5));*/
 
     background-size: 100%;
-    background-position: 28px 33%;
+    background-position: 10px 33%;
     z-index: -1;
     opacity: .5;
-  }
+
+    -webkit-mask-image: linear-gradient(to bottom, rgba(248,80,50,0) 0%, rgba(231,56,39,1) 25%, rgba(231,56,39,1) 75%, rgba(231,56,39,0) 100%);
+    mask-image: linear-gradient(to bottom, rgba(248,80,50,0) 0%, rgba(231,56,39,1) 25%, rgba(231,56,39,1) 19%, rgba(231,56,39,1) 75%, rgba(231,56,39,0) 100%);
+}
 
   nav li:nth-child(even) a:after {
     background-image: url(img/blobs/blob2.png);
+    background-position: -10px 20%;
   }
 
   .cursive {
@@ -102,15 +106,30 @@
   }
 
   h2 {
+    position: relative;
+    padding: 15px;
+    margin-left: -15px;
+  }
+  h2:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    z-index: -1;
+
+    -webkit-mask-image: linear-gradient(to bottom, rgba(248,80,50,0) 0%, rgba(231,56,39,1) 25%, rgba(231,56,39,1) 75%, rgba(231,56,39,0) 100%);
+    mask-image: linear-gradient(to bottom, rgba(248,80,50,0) 0%, rgba(231,56,39,1) 25%, rgba(231,56,39,1) 19%, rgba(231,56,39,1) 75%, rgba(231,56,39,0) 100%);
+
     background-image: url(img/blobs/blob1.png);
     background-size: 250px 100px;
     background-position: 0 -15px;
     background-repeat: no-repeat;
-    padding: 15px;
-    margin-left: -15px;
   }
 
-  section:nth-child(even) h2 {
+  section:nth-child(even) h2:after {
     background-image: url(img/blobs/blob2.png);
     background-size: 270px 165px;
     background-position: -20px -15px;
