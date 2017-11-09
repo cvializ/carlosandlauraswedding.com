@@ -22,6 +22,7 @@
     font-family: "Goudy Bookletter 1911", Geneva, sans-serif;
     font-size: 125%;
     background-image: url(img/matte.jpg);
+    color: #333;
   }
   main {
     margin: auto;
@@ -73,7 +74,7 @@
     z-index: 10;
   }
 
-  nav a:after {
+  nav li a:after {
     content: '';
     position: absolute;
     top: 0;
@@ -85,7 +86,11 @@
     background-size: 100%;
     background-position: 28px 33%;
     z-index: -1;
-    opacity: .8;
+    opacity: .5;
+  }
+
+  nav li:nth-child(even) a:after {
+    background-image: url(img/blobs/blob2.png);
   }
 
   .cursive {
@@ -102,6 +107,13 @@
     background-position: 0 -15px;
     background-repeat: no-repeat;
     padding: 15px;
+    margin-left: -15px;
+  }
+
+  section:nth-child(even) h2 {
+    background-image: url(img/blobs/blob2.png);
+    background-size: 270px 165px;
+    background-position: -20px -15px;
   }
 
   @media (min-width: 720px) {
@@ -145,6 +157,13 @@
     text-align: center;
   }
 
+  section {
+    padding: 0 20px;
+  }
+
+  h2 {
+    margin-left: -35px;
+  }
 
   @media (min-width: 640px) {
     .flight-tables table {
@@ -195,26 +214,21 @@
     </section>
 
     <section>
-      <h2>Our Wedding</h2>
-      <p>
-        The ceremony and reception will take place at
-        <a href="#">The Inn at the Old Silk Mill</a>
-        in downtown Fredericksburg.
-        The ceremony will begin at 5pm and a reception will follow
-        immediately afterward.
-      </p>
+      <h2>Ceremony & Reception</h2>
+      <p>Saturday, August 25, 2018 at 5:30 PM</p>
+      <p>Inn at the Old Silk Mill</p>
+      <p>1707 Princess Anne St.</p>
+      <p>Fredericksburg, VA 22401</p>
       <p>Please wear whatever makes you feel most glamorous and comfortable!</p>
     </section>
 
-    <section id="about-us">
-      <h2>About us</h2>
-
+    <section id="accomodations">
+      <h2>Accomodations</h2>
+      <p>Guests may stay on-site at the Inn for a discounted rate.</p>
+      <p><a href="https://convoyant.com/resnexus/reservations/lodging/BFC604A8-E2EC-4A4D-A6EE-BAE1DA8A564E?ID=574">Visit Website</a></p>
     </section>
 
     <section id="travel">
-      <amp-img src="/img/chicago-feet.jpg" layout="responsive" width="400" height="200">
-        <noscript><img src="/img/chicago-feet.jpg" /></noscript>
-      </amp-img>
       <h2>Travel</h2>
       <p>The wedding will be at 5pm on Saturday! Keep this in mind when planning your flights.</p>
       <p>Dulles and Richmond are the closest airports</p>
@@ -243,9 +257,6 @@
 
 
     <section id="activities">
-      <amp-img src="/img/the-band.jpg" layout="responsive" width="400" height="200">
-        <noscript><img src="/img/the-band.jpg" /></noscript>
-      </amp-img>
       <h2>Activities</h2>
     </section>
 
