@@ -6,8 +6,8 @@
   <title>Carlos and Laura's Wedding!</title>
   <link rel="canonical" href="https://www.carlosandlauraswedding.com/" />
   <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-  <link href='http://fonts.googleapis.com/css?family=Rouge+Script&text=1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz!%3F%20' rel='stylesheet' type='text/css' />
-  <link href='http://fonts.googleapis.com/css?family=Goudy+Bookletter+1911&text=1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz!%3F%20' rel='stylesheet' type='text/css' />
+  <link href="http://fonts.googleapis.com/css?family=Rouge+Script&text=1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz!%3F%20()—’,.:" rel="stylesheet" type="text/css" />
+  <link href="http://fonts.googleapis.com/css?family=Goudy+Bookletter+1911&text=1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz!%3F%20()—’,.:" rel="stylesheet" type="text/css" />
   <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
   <style amp-custom>
   :root {
@@ -22,12 +22,14 @@
     font-family: "Goudy Bookletter 1911", Geneva, sans-serif;
     font-size: 125%;
     background-image: radial-gradient(circle at top, lavender 0, #fff 100%);
-    text-align: center;
   }
   main {
     margin: auto;
     max-width: 768px;
     padding: 0 var(--main-padding);
+  }
+  footer {
+    margin: 40px;
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -37,7 +39,7 @@
 
   @media (min-width: 640px) {
     h1, h2, h3, h4, h5, h6 {
-      text-align: center;
+      /* text-align: center; */
     }
   }
 
@@ -45,7 +47,7 @@
     margin: 10px 0;
   }
 
-  ul {
+  nav ul {
     display: flex;
     flex-flow: row nowrap;
     list-style: none;
@@ -90,13 +92,28 @@
   .flight-tables {
     display: flex;
     justify-content: center;
+    flex-flow: column nowrap;
   }
   .flight-tables table {
-    margin: 10px;
+    width: 100%;
+    margin: 0;
+    text-align: center;
+  }
+
+
+  @media (min-width: 640px) {
+    .flight-tables table {
+      margin: 10px;
+      width: calc(50% - 20px);
+    }
+
+    .flight-tables {
+      flex-flow: row nowrap;
+    }
   }
 
   td {
-    padding: 10px;s
+    padding: 10px;
   }
   </style>
 </head>
@@ -104,7 +121,6 @@
   <main>
     <nav>
       <ul>
-        <li><a href="#wedding">Wedding</a></li>
         <li><a href="#about-us">About us</a></li>
         <li><a href="#venue">Venue</a></li>
         <li><a href="#travel">Travel</a></li>
@@ -134,7 +150,7 @@
       </div>
     </section>
 
-    <section id="wedding">
+    <section>
       <h2>Our Wedding</h2>
       <p>
         The ceremony and reception will take place at
@@ -143,7 +159,7 @@
         The ceremony will begin at 5pm and a reception will follow
         immediately afterward.
       </p>
-      <p>Please wear whatever makes you feel most galmorous and comfortable!</p>
+      <p>Please wear whatever makes you feel most glamorous and comfortable!</p>
     </section>
 
     <section id="about-us">
@@ -196,7 +212,28 @@
 
     <section id="registry">
       <h2>Registry</h2>
+      <p>For those who would like to purchase a gift for the bride and groom, please find our online registries below:</p>
+      <p><a href="#">Amazon</a></p>
+      <p><a href="#">Bed Bath and Beyond, or whatever</a></p>
+
+      <p>
+        If you are creatively inclined&mdash;or even if you’re not&mdash;we would love to accept your handmade artwork in lieu of a bought gift!
+        We can think of no better way to decorate our home than with the artistic creations of our favorite people in the world.
+      </p>
+
+      <p>For the activists (or if online shopping and visual artistry aren’t your cup of tea) please consider donating to one of the following organizations:</p>
+
+      <ul>
+        <li><a href="https://donate.thousandcurrents.org/checkout/donation?eid=126523">Black Lives Matter </a></li>
+        <li><a href="https://www.cair.com/donations/general-donation/campaign/#/donation">Council on American-Islamic Relations</a></li>
+        <li><a href="https://secure.actblue.com/contribute/page/blackandpink">Black and Pink</a></li>
+        <li><a href="https://secure.ppaction.org/site/Donation2?df_id=24219&24219.donation=form1&s_src=Evergreen_c3_PPNonDirected_tab">Planned Parenthood</a></li>
+        <li><a href="https://www.operationhomefront.org/donate/2247">Operation Homefront</a></li>
+      </ul>
     </section>
+    <footer>
+      <blockquote>Never forget that justice is what love looks like in public. <cite>&mdash; Cornel West</cite></blockquote>
+    </footer>
   </main>
 </body>
 </html>
