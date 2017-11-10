@@ -74,7 +74,7 @@
     z-index: 10;
   }
 
-  nav li a:after {
+  nav li a::after {
     content: '';
     position: absolute;
     top: 0;
@@ -90,7 +90,15 @@
 
     -webkit-mask-image: linear-gradient(to bottom, rgba(248,80,50,0) 0%, rgba(231,56,39,1) 25%, rgba(231,56,39,1) 75%, rgba(231,56,39,0) 100%);
     mask-image: linear-gradient(to bottom, rgba(248,80,50,0) 0%, rgba(231,56,39,1) 25%, rgba(231,56,39,1) 19%, rgba(231,56,39,1) 75%, rgba(231,56,39,0) 100%);
-}
+  }
+
+  nav li a:hover::after {
+    opacity: 1;
+  }
+
+  nav li a:hover {
+    color: #fff;
+  }
 
   nav li:nth-child(even) a:after {
     background-image: url(img/blobs/blob2.png);
@@ -102,7 +110,13 @@
   }
 
   h1.cursive {
-    font-size: 36px;
+    font-size: 64px;
+  }
+
+  @media (min-width: 900px) {
+    h1.cursive {
+      font-size: 7vw;
+    }
   }
 
   h2 {
@@ -118,10 +132,12 @@
     bottom: 0;
     left: 0;
 
+    opacity: .5;
+
     z-index: -1;
 
-    -webkit-mask-image: linear-gradient(to bottom, rgba(248,80,50,0) 0%, rgba(231,56,39,1) 25%, rgba(231,56,39,1) 75%, rgba(231,56,39,0) 100%);
-    mask-image: linear-gradient(to bottom, rgba(248,80,50,0) 0%, rgba(231,56,39,1) 25%, rgba(231,56,39,1) 19%, rgba(231,56,39,1) 75%, rgba(231,56,39,0) 100%);
+    -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 25%, rgba(0,0,0,1) 75%, rgba(0,0,0,0) 100%);
+    mask-image: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 25%, rgba(0,0,0,1) 75%, rgba(0,0,0,0) 100%);
 
     background-image: url(img/blobs/blob1.png);
     background-size: 250px 100px;
@@ -129,16 +145,35 @@
     background-repeat: no-repeat;
   }
 
+  .watercolor-text {
+    font-weight: bold;
+    background: rgba(31, 109, 255, 0.658) url(img/textmap.png);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+  }
+
+  .underline {
+    position: relative;
+  }
+
+  .underline:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 1px;
+    background: rgba(0, 0, 0, .5) url(img/textmap.png);
+  }
+
+  a.underline:hover::after {
+    display: none;
+  }
+
   section:nth-child(even) h2:after {
     background-image: url(img/blobs/blob2.png);
     background-size: 270px 165px;
     background-position: -20px -15px;
-  }
-
-  @media (min-width: 720px) {
-    h1.cursive {
-      font-size: 5vw;
-    }
   }
 
   .post-card {
@@ -176,7 +211,7 @@
     text-align: center;
   }
 
-  section {
+  section:not(:first-of-type) {
     padding: 0 20px;
   }
 
@@ -198,13 +233,34 @@
   td {
     padding: 10px;
   }
+
+  time {
+    font-variant: small-caps;
+    text-transform: lowercase;
+  }
+
+  a {
+    color: rgb(28, 131, 214);
+  }
+
+  a:hover {
+    text-decoration: none;
+  }
+
+  footer {
+    display: flex;
+  }
+
+  blockquote {
+    margin: auto;
+  }
   </style>
 </head>
 <body>
   <main>
     <nav>
       <ul>
-        <li><a href="#about-us">About</a></li>
+        <li><a href="#accommodations">Accommodations</a></li>
         <li><a href="#travel">Travel</a></li>
         <li><a href="#activities">Activities</a></li>
         <li><a href="#registry">Registry</a></li>
@@ -225,7 +281,7 @@
           <noscript><img src="/img/tree-peeps.jpg" /></noscript>
         </amp-img>
       </div>
-      <h1 class="cursive">Laura & Carlos</h1>
+      <h1 class="cursive watercolor-text">Laura & Carlos</h1>
       <div class="date-and-place">
         <p class="date">8·25·18</p>
         <p class="city">Fredericksburg, Virginia</p>
@@ -234,22 +290,22 @@
 
     <section>
       <h2>Ceremony & Reception</h2>
-      <p>Saturday, August 25, 2018 at 5:30 PM</p>
+      <p>Saturday August 25, 2018 at <time>5:30PM</time></p>
       <p>Inn at the Old Silk Mill</p>
       <p>1707 Princess Anne St.</p>
       <p>Fredericksburg, VA 22401</p>
       <p>Please wear whatever makes you feel most glamorous and comfortable!</p>
     </section>
 
-    <section id="accomodations">
-      <h2>Accomodations</h2>
+    <section id="accommodations">
+      <h2>Accommodations</h2>
       <p>Guests may stay on-site at the Inn for a discounted rate.</p>
       <p><a href="https://convoyant.com/resnexus/reservations/lodging/BFC604A8-E2EC-4A4D-A6EE-BAE1DA8A564E?ID=574">Visit Website</a></p>
     </section>
 
     <section id="travel">
       <h2>Travel</h2>
-      <p>The wedding will be at 5pm on Saturday! Keep this in mind when planning your flights.</p>
+      <p>The wedding will be at <time>5PM</time> on Saturday! Keep this in mind when planning your flights.</p>
       <p>Dulles and Richmond are the closest airports</p>
       <div class="flight-tables">
         <table>
@@ -282,8 +338,10 @@
     <section id="registry">
       <h2>Registry</h2>
       <p>For those who would like to purchase a gift for the bride and groom, please find our online registries below:</p>
-      <p><a href="#">Amazon</a></p>
-      <p><a href="#">Bed Bath and Beyond, or whatever</a></p>
+      <ul>
+        <li><a href="#">Amazon</a></li>
+        <li><a href="#">Bed Bath and Beyond, or whatever</a></li>
+      </ul>
 
       <p>
         If you are creatively inclined&mdash;or even if you’re not&mdash;we would love to accept your handmade artwork in lieu of a bought gift!
@@ -301,7 +359,10 @@
       </ul>
     </section>
     <footer>
-      <blockquote>Never forget that justice is what love looks like in public. <cite>&mdash; Cornel West</cite></blockquote>
+      <blockquote>
+        <p>Never forget that justice is what love looks like in public.</p>
+        <p><cite>&mdash; Cornel West</cite></p>
+      </blockquote>
     </footer>
   </main>
 </body>
