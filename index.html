@@ -25,9 +25,12 @@
     color: #333;
   }
   main {
-    margin: auto;
+    margin: 0 auto 30px;
     max-width: 768px;
     padding: 0 var(--main-padding);
+  }
+  nav {
+    max-width: 1024px;
   }
   footer {
     margin: 40px;
@@ -46,6 +49,7 @@
     display: flex;
     flex-flow: row nowrap;
     list-style: none;
+    margin: 0 10px;
   }
 
   nav li {
@@ -54,11 +58,12 @@
   }
 
   nav li + li {
-    margin-left: 5px;
+    margin-left: 15px;
   }
 
   nav {
-    margin: 5px 0;
+    margin: 10px auto;
+    overflow: auto;
   }
 
   nav a {
@@ -81,15 +86,16 @@
     right: 0;
     bottom: 0;
     left: 0;
-    background-image: url(img/blobs/blob1.png);/*, linear-gradient(rgba(255, 255, 255, .5), rgba(255, 255, 255, 0), rgba(255, 255, 255, .5));*/
+
+    /* background-image: url(img/blobs/blob1.png);
+    background-position: 10px 33%; */
 
     background-size: 100%;
-    background-position: 10px 33%;
     z-index: -1;
     opacity: .5;
 
-    -webkit-mask-image: linear-gradient(to bottom, rgba(248,80,50,0) 0%, rgba(231,56,39,1) 25%, rgba(231,56,39,1) 75%, rgba(231,56,39,0) 100%);
-    mask-image: linear-gradient(to bottom, rgba(248,80,50,0) 0%, rgba(231,56,39,1) 25%, rgba(231,56,39,1) 19%, rgba(231,56,39,1) 75%, rgba(231,56,39,0) 100%);
+    -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 25%, rgba(0,0,0,1) 75%, rgba(0,0,0,0) 100%);
+    mask-image: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 25%, rgba(0,0,0,1) 75%, rgba(0,0,0,0) 100%);
   }
 
   nav li a:hover::after {
@@ -98,6 +104,11 @@
 
   nav li a:hover {
     color: #fff;
+  }
+
+  nav li:nth-child(odd) a:after {
+    background-image: url(img/blobs/blob1.png);
+    background-position: 10px 33%;
   }
 
   nav li:nth-child(even) a:after {
@@ -168,6 +179,10 @@
 
   a.underline:hover::after {
     display: none;
+  }
+
+  section {
+    min-height: 100px;
   }
 
   section:nth-child(even) h2:after {
@@ -247,26 +262,42 @@
     text-decoration: none;
   }
 
-  footer {
+  .quote-wrapper {
     display: flex;
+    justify-content: center;
   }
 
-  blockquote {
-    margin: auto;
+  blockquote p:before {
+    content: '“'; content: open-quote;
+    transform: translateX(-100%);
+  }
+  blockquote p:after {
+    content: '”'; content: close-quote;
+  }
+  blockquote p:before,
+  blockquote p:after {
+    position: absolute;
+  }
+
+  cite {
+    display: block;
+    text-align: right;
   }
   </style>
 </head>
 <body>
+  <nav>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#ceremony">Ceremony</a></li>
+      <li><a href="#accommodations">Accommodations</a></li>
+      <li><a href="#travel">Travel</a></li>
+      <li><a href="#activities">Activities</a></li>
+      <li><a href="#registry">Registry</a></li>
+      <li><a href="#rsvp">RSVP</a></li>
+    </ul>
+  </nav>
   <main>
-    <nav>
-      <ul>
-        <li><a href="#accommodations">Accommodations</a></li>
-        <li><a href="#travel">Travel</a></li>
-        <li><a href="#activities">Activities</a></li>
-        <li><a href="#registry">Registry</a></li>
-      </ul>
-    </nav>
-
     <section class="center">
       <div class="post-card">
         <amp-img class="post-card-image" src="/img/beach-peeps.jpg" layout="responsive" width="2" height="3">
@@ -287,8 +318,11 @@
         <p class="city">Fredericksburg, Virginia</p>
       </div>
     </section>
-
-    <section>
+    <section id="about">
+      <h2>About us</h2>
+      <p>Wow cool facts</p>
+    </section>
+    <section id="ceremony">
       <h2>Ceremony & Reception</h2>
       <p>Saturday August 25, 2018 at <time>5:30PM</time></p>
       <p>Inn at the Old Silk Mill</p>
@@ -357,13 +391,16 @@
         <li><a href="https://secure.ppaction.org/site/Donation2?df_id=24219&24219.donation=form1&s_src=Evergreen_c3_PPNonDirected_tab">Planned Parenthood</a></li>
         <li><a href="https://www.operationhomefront.org/donate/2247">Operation Homefront</a></li>
       </ul>
+      <div class="quote-wrapper">
+        <blockquote>
+          <p>Never forget that justice is what love looks like in public.</p>
+          <cite>&mdash; Cornel West</cite>
+        </blockquote>
+      </div>
     </section>
-    <footer>
-      <blockquote>
-        <p>Never forget that justice is what love looks like in public.</p>
-        <p><cite>&mdash; Cornel West</cite></p>
-      </blockquote>
-    </footer>
+    <section id="rsvp">
+      <h2>RSVP</h2>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLScJkuIVq9z0bVwXPzNkbRzs1USqdyrqM7oTiIb0vhQY7ohOuA/viewform">Fill out our RSVP form!</a>
   </main>
 </body>
 </html>
