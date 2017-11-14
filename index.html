@@ -4,10 +4,10 @@
   <meta charset="utf-8">
   <script async src="https://cdn.ampproject.org/v0.js"></script>
   <title>Carlos and Laura's Wedding!</title>
-  <link rel="canonical" href="https://www.carlosandlauraswedding.com/" />
+  <link rel="canonical" href="https://www.carlosandlauraswedding.com/">
   <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-  <link href="http://fonts.googleapis.com/css?family=Rouge+Script&text=LaurndClos%26%20" rel="stylesheet" type="text/css" />
-  <link href="http://fonts.googleapis.com/css?family=Goudy+Bookletter+1911&text=1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz!%3F%26%20()—’,.:" rel="stylesheet" type="text/css" />
+  <link href="http://fonts.googleapis.com/css?family=Rouge+Script&text=LaurndClos%26%20" rel="stylesheet" type="text/css">
+  <link href="http://fonts.googleapis.com/css?family=Goudy+Bookletter+1911&text=1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz!%3F%26%20()—’,.:" rel="stylesheet" type="text/css">
   <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
   <style amp-custom>
   :root {
@@ -31,6 +31,10 @@
   }
   nav {
     max-width: 1024px;
+  }
+  address {
+    font-style: normal;
+    margin: 20px 0;
   }
   footer {
     margin: 40px;
@@ -103,7 +107,6 @@
   }
 
   nav li a:hover {
-    color: #fff;
   }
 
   nav li:nth-child(odd) a:after {
@@ -234,19 +237,11 @@
     margin-left: -35px;
   }
 
-  @media (min-width: 640px) {
-    .flight-tables table {
-      margin: 10px;
-      width: calc(50% - 20px);
-    }
-
-    .flight-tables {
-      flex-flow: row nowrap;
-    }
+  td, th {
+    padding: 5px;
   }
-
-  td {
-    padding: 10px;
+  tbody th {
+    text-align: right;
   }
 
   time {
@@ -283,16 +278,46 @@
     display: block;
     text-align: right;
   }
+
+  .bounce {
+    animation: easeOutBounce 1s 0s forwards;
+    animation-delay: .5s;
+  }
+
+  @keyframes easeOutBounce {
+    0% {transform: translateX(0); animation-timing-function: ease-out;}
+    10% {transform: translateX(-50px); animation-timing-function: ease-in;}
+    33% {transform: translateX(0px); animation-timing-function: ease-out;}
+    50% {transform: translateX(-25px); animation-timing-function: ease-in;}
+    66% {transform: translateX(0px); animation-timing-function: ease-out;}
+    82% {transform: translateX(-6px); animation-timing-function: ease-in;}
+    100% { transform: translateX(0px);}
+  }
+
+  @media (min-width: 640px) {
+    .bounce {
+      animation-iteration-count: 0;
+    }
+
+    .flight-tables table {
+      margin: 10px;
+      width: calc(50% - 20px);
+    }
+
+    .flight-tables {
+      flex-flow: row nowrap;
+    }
+  }
   </style>
 </head>
 <body>
   <nav>
-    <ul>
-      <li><a href="#about">About</a></li>
-      <li><a href="#ceremony">Ceremony</a></li>
+    <ul class="bounce">
+      <li><a href="#wedding">Wedding</a></li>
+      <li><a href="#about">About&nbsp;Us</a></li>
       <li><a href="#accommodations">Accommodations</a></li>
       <li><a href="#travel">Travel</a></li>
-      <li><a href="#activities">Activities</a></li>
+      <li><a href="#fredericksburg">Fredericksburg</a></li>
       <li><a href="#registry">Registry</a></li>
       <li><a href="#rsvp">RSVP</a></li>
     </ul>
@@ -318,17 +343,20 @@
         <p class="city">Fredericksburg, Virginia</p>
       </div>
     </section>
+    <section id="wedding">
+      <h2>Ceremony & Reception</h2>
+      <p>Saturday, August 25, 2018 at <time>5:30PM</time></p>
+      <address>
+        <p>Inn at the Old Silk Mill</p>
+        <p>1707 Princess Anne St.</p>
+        <p>Fredericksburg, VA 22401</p>
+      </address>
+      <p>Please wear whatever makes you feel most glamorous and comfortable!</p>
+    </section>
+
     <section id="about">
       <h2>About us</h2>
       <p>Wow cool facts</p>
-    </section>
-    <section id="ceremony">
-      <h2>Ceremony & Reception</h2>
-      <p>Saturday August 25, 2018 at <time>5:30PM</time></p>
-      <p>Inn at the Old Silk Mill</p>
-      <p>1707 Princess Anne St.</p>
-      <p>Fredericksburg, VA 22401</p>
-      <p>Please wear whatever makes you feel most glamorous and comfortable!</p>
     </section>
 
     <section id="accommodations">
@@ -339,34 +367,33 @@
 
     <section id="travel">
       <h2>Travel</h2>
-      <p>The wedding will be at <time>5PM</time> on Saturday! Keep this in mind when planning your flights.</p>
-      <p>Dulles and Richmond are the closest airports</p>
+      <p>Dulles and Richmond are the closest airports to Fredericksburg.</p>
+      <p>We strongly advise avoiding Interstate 95 between Dulles and Fredericksburg during rush hour.</p>
       <div class="flight-tables">
         <table>
           <thead>
               <tr><th colspan="2"><a href="https://www.google.com/maps/dir/IAD/Fredericksburg,+VA">IAD ✈ Fredericksburg, VA</a></th></tr>
-              <tr><th>Pros</th><th>Cons</th></tr>
           </thead>
           <tbody>
-            <tr><td>More direct flights</td><td>Traffic can be worse</td></tr>
+            <tr><th scope="row">Pros:</th><td>More direct flights</td></tr>
+            <tr><th scope="row">Cons:</th><td>Traffic can be worse</td></tr>
           </tbody>
         </table>
 
         <table>
           <thead>
               <tr><th colspan="2"><a href="https://www.google.com/maps/dir/KRIC/Fredericksburg,+VA">RIC ✈ Fredericksburg, VA</a></th></tr>
-              <tr><th>Pros</th><th>Cons</th></tr>
-          </thead>
           <tbody>
-            <tr><td>Traffic can be better</td><td>Fewer direct flights</td></tr>
+            <tr><th scope="row">Pros:</th><td>Traffic can be better</td></tr>
+            <tr><th scope="row">Cons:</th><td>Fewer direct flights</td></tr>
           </tbody>
         </table>
       </div>
     </section>
 
 
-    <section id="activities">
-      <h2>Activities</h2>
+    <section id="fredericksburg">
+      <h2>Fredericksburg</h2>
     </section>
 
     <section id="registry">
