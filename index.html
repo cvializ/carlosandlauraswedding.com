@@ -18,26 +18,31 @@
     margin: 0;
     padding: 0;
   }
+
   body {
     font-family: "Goudy Bookletter 1911", Geneva, sans-serif;
     font-size: 125%;
     background-image: url(img/matte.jpg);
     color: #333;
   }
+
   main {
     margin: 0 auto 30px;
     max-width: 768px;
     padding: 0 var(--main-padding);
   }
+
   nav {
     max-width: 1024px;
   }
-  address {
-    font-style: normal;
-    margin: 20px 0;
+
+  section {
+    min-height: 100px;
   }
-  footer {
-    margin: 40px;
+
+  address {
+    margin: 20px 0;
+    font-style: normal;
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -91,8 +96,8 @@
     bottom: 0;
     left: 0;
 
-    /* background-image: url(img/blobs/blob1.png);
-    background-position: 10px 33%; */
+    background-image: url(img/blobs/blob1.png);
+    background-position: 10px 33%;
 
     background-size: 100%;
     z-index: -1;
@@ -104,14 +109,6 @@
 
   nav li a:hover::after {
     opacity: 1;
-  }
-
-  nav li a:hover {
-  }
-
-  nav li:nth-child(odd) a:after {
-    background-image: url(img/blobs/blob1.png);
-    background-position: 10px 33%;
   }
 
   nav li:nth-child(even) a:after {
@@ -182,10 +179,6 @@
 
   a.underline:hover::after {
     display: none;
-  }
-
-  section {
-    min-height: 100px;
   }
 
   section:nth-child(even) h2:after {
@@ -347,7 +340,7 @@
       <h2>Ceremony & Reception</h2>
       <p>Saturday, August 25, 2018 at <time>5:30PM</time></p>
       <address>
-        <p>Inn at the Old Silk Mill</p>
+        <p><a href="http://www.innattheoldesilkmill.com/about-us/">Inn at the Old Silk Mill</a></p>
         <p>1707 Princess Anne St.</p>
         <p>Fredericksburg, VA 22401</p>
       </address>
@@ -412,11 +405,11 @@
       <p>For the activists (or if online shopping and visual artistry aren’t your cup of tea) please consider donating to one of the following organizations:</p>
 
       <ul>
+        <li><a href="https://secure.actblue.com/contribute/page/blackandpink">Black and Pink</a></li>
         <li><a href="https://donate.thousandcurrents.org/checkout/donation?eid=126523">Black Lives Matter </a></li>
         <li><a href="https://www.cair.com/donations/general-donation/campaign/#/donation">Council on American-Islamic Relations</a></li>
-        <li><a href="https://secure.actblue.com/contribute/page/blackandpink">Black and Pink</a></li>
-        <li><a href="https://secure.ppaction.org/site/Donation2?df_id=24219&24219.donation=form1&s_src=Evergreen_c3_PPNonDirected_tab">Planned Parenthood</a></li>
         <li><a href="https://www.operationhomefront.org/donate/2247">Operation Homefront</a></li>
+        <li><a href="https://secure.ppaction.org/site/Donation2?df_id=24219&24219.donation=form1&s_src=Evergreen_c3_PPNonDirected_tab">Planned Parenthood</a></li>
       </ul>
       <div class="quote-wrapper">
         <blockquote>
