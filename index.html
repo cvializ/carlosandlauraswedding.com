@@ -32,8 +32,11 @@
     padding: 0 var(--main-padding);
   }
 
-  nav {
+  nav,
+  amp-carousel {
     max-width: 1024px;
+    margin: 10px auto;
+    overflow: auto;
   }
 
   section {
@@ -70,11 +73,7 @@
     margin-left: 15px;
   }
 
-  nav {
-    margin: 10px auto;
-    overflow: auto;
-  }
-
+  .nav-item a,
   nav a {
     box-sizing: border-box;
     display: inline-block;
@@ -88,6 +87,7 @@
     z-index: 10;
   }
 
+  .nav-item a::after,
   nav li a::after {
     content: '';
     position: absolute;
@@ -107,13 +107,20 @@
     mask-image: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 25%, rgba(0,0,0,1) 75%, rgba(0,0,0,0) 100%);
   }
 
+  .nav-item a:hover::after,
   nav li a:hover::after {
     opacity: 1;
   }
 
+  .nav-item:nth-child(even) a:after,
   nav li:nth-child(even) a:after {
     background-image: url(img/blobs/blob2.png);
     background-position: -10px 20%;
+  }
+
+  .amp-carousel-button-prev,
+  .amp-carousel-button-next {
+    display: none;
   }
 
   .cursive {
@@ -349,7 +356,9 @@
 
     <section id="about">
       <h2>About us</h2>
-      <p>Wow cool facts</p>
+      <p>Carlos and Laura met at a summer resort in the Catskill Mountains, where he taught her how to dance. They fell madly in love, but knew that they would never see each other again after returning to their separate high schools in the fall.  In a twist of fate, Laura began attending Carlos’ school in their senior year, and he reclaimed her heart by winning a car race days prior to graduation.</p>
+      <p>However, after leaving high school, they went their separate ways.  Laura opened a small local bookshop while Carlos founded a corporate bookstore that threatened to put hers out of business.  Dismayed by the aggression of corporate America, Laura moved to Austria and became a nun.  Carlos, meanwhile, gave up the corporate lifestyle as well, and relocated to Australia to run a safari business.  When he valiantly survived a rogue crocodile attack, Laura left the convent and rushed to visit him, and the two returned to the U.S. together.</p>
+      <p>It’s been a thrilling ride so far, and we are so excited to embark on this new adventure together!  We hope you can celebrate with us on the 25th.</p>
     </section>
 
     <section id="accommodations">
