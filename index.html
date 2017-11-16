@@ -3,11 +3,12 @@
 <head>
   <meta charset="utf-8">
   <script async src="https://cdn.ampproject.org/v0.js"></script>
+  <script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"></script>
   <title>Carlos and Laura's Wedding!</title>
   <link rel="canonical" href="https://www.carlosandlauraswedding.com/">
   <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-  <link href="http://fonts.googleapis.com/css?family=Rouge+Script&text=LaurndClos%26%20" rel="stylesheet" type="text/css">
-  <link href="http://fonts.googleapis.com/css?family=Goudy+Bookletter+1911&text=1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz!%3F%26%20()—’,.:" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Rouge+Script&text=LaurndClos%26%20" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Goudy+Bookletter+1911&text=1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz!%3F%26%20()—’,.:" rel="stylesheet" type="text/css">
   <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
   <style amp-custom>
   :root {
@@ -20,10 +21,14 @@
   }
 
   body {
-    font-family: "Goudy Bookletter 1911", Geneva, sans-serif;
+    font-family: "Goudy Bookletter 1911", Palatino, "Times New Roman", serif;
     font-size: 125%;
     background-image: url(img/matte.jpg);
     color: #333;
+  }
+
+  .cursive {
+    font-family: 'Rouge Script', Savoye Let, cursive, serif;
   }
 
   main {
@@ -32,11 +37,11 @@
     padding: 0 var(--main-padding);
   }
 
-  nav,
-  amp-carousel {
+  nav {
+    display: flex;
+    justify-content: center;
     max-width: 1024px;
     margin: 10px auto;
-    overflow: auto;
   }
 
   section {
@@ -57,24 +62,11 @@
     margin: 10px 0;
   }
 
-  nav ul {
-    display: flex;
-    flex-flow: row nowrap;
-    list-style: none;
-    margin: 0 10px;
-  }
-
-  nav li {
-    flex: 1 0 0;
-    text-align: center;
-  }
-
-  nav li + li {
+  amp-carousel {
     margin-left: 15px;
   }
 
-  .nav-item a,
-  nav a {
+  .nav-item a {
     box-sizing: border-box;
     display: inline-block;
     position: relative;
@@ -87,8 +79,7 @@
     z-index: 10;
   }
 
-  .nav-item a::after,
-  nav li a::after {
+  .nav-item a::after {
     content: '';
     position: absolute;
     top: 0;
@@ -107,24 +98,23 @@
     mask-image: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 25%, rgba(0,0,0,1) 75%, rgba(0,0,0,0) 100%);
   }
 
-  .nav-item a:hover::after,
-  nav li a:hover::after {
+
+  .nav-item a:hover::after {
     opacity: 1;
   }
 
-  .nav-item:nth-child(even) a:after,
-  nav li:nth-child(even) a:after {
+  .nav-item:nth-child(even) a:after {
     background-image: url(img/blobs/blob2.png);
     background-position: -10px 20%;
+  }
+
+  .amp-scrollable-carousel-slide {
+    margin-left: 15px;
   }
 
   .amp-carousel-button-prev,
   .amp-carousel-button-next {
     display: none;
-  }
-
-  .cursive {
-    font-family: 'Rouge Script', cursive;
   }
 
   h1.cursive {
@@ -140,8 +130,9 @@
   h2 {
     position: relative;
     padding: 15px;
-    margin-left: -15px;
+    margin-left: -35px;
   }
+
   h2:after {
     content: '';
     position: absolute;
@@ -170,25 +161,7 @@
     -webkit-background-clip: text;
   }
 
-  .underline {
-    position: relative;
-  }
-
-  .underline:after {
-    content: '';
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    height: 1px;
-    background: rgba(0, 0, 0, .5) url(img/textmap.png);
-  }
-
-  a.underline:hover::after {
-    display: none;
-  }
-
-  section:nth-child(even) h2:after {
+  section:nth-child(odd) h2:after {
     background-image: url(img/blobs/blob2.png);
     background-size: 270px 165px;
     background-position: -20px -15px;
@@ -231,10 +204,6 @@
 
   section:not(:first-of-type) {
     padding: 0 20px;
-  }
-
-  h2 {
-    margin-left: -35px;
   }
 
   td, th {
@@ -280,21 +249,25 @@
   }
 
   .bounce {
-    animation: easeOutBounce 1s 0s forwards;
-    animation-delay: .5s;
+    animation: easeOutBounce 1.25s 0s forwards;
+    animation-delay: 2s;
   }
 
   @keyframes easeOutBounce {
     0% {transform: translateX(0); animation-timing-function: ease-out;}
-    10% {transform: translateX(-50px); animation-timing-function: ease-in;}
-    33% {transform: translateX(0px); animation-timing-function: ease-out;}
-    50% {transform: translateX(-25px); animation-timing-function: ease-in;}
-    66% {transform: translateX(0px); animation-timing-function: ease-out;}
-    82% {transform: translateX(-6px); animation-timing-function: ease-in;}
+    20% {transform: translateX(-100px); animation-timing-function: ease-in;}
+    40% {transform: translateX(0px); animation-timing-function: ease-out;}
+    60% {transform: translateX(-50px); animation-timing-function: ease-in;}
+    75% {transform: translateX(0px); animation-timing-function: ease-out;}
+    90% {transform: translateX(-15px); animation-timing-function: ease-in;}
     100% { transform: translateX(0px);}
   }
 
   @media (min-width: 640px) {
+    amp-carousel {
+      margin: 0 15px;
+    }
+
     .bounce {
       animation-iteration-count: 0;
     }
@@ -308,19 +281,27 @@
       flex-flow: row nowrap;
     }
   }
+
+  #about p {
+    line-height: 1.5em;
+  }
   </style>
 </head>
 <body>
   <nav>
-    <ul class="bounce">
-      <li><a href="#wedding">Wedding</a></li>
-      <li><a href="#about">About&nbsp;Us</a></li>
-      <li><a href="#accommodations">Accommodations</a></li>
-      <li><a href="#travel">Travel</a></li>
-      <li><a href="#fredericksburg">Fredericksburg</a></li>
-      <li><a href="#registry">Registry</a></li>
-      <li><a href="#rsvp">RSVP</a></li>
-    </ul>
+    <amp-carousel
+      layout="fixed-height"
+      height="37"
+      type="carousel"
+    >
+      <div class="nav-item bounce"><a href="#wedding">Wedding</a></div>
+      <div class="nav-item bounce"><a href="#about">About&nbsp;Us</a></div>
+      <div class="nav-item bounce"><a href="#accommodations">Accommodations</a></div>
+      <div class="nav-item bounce"><a href="#travel">Travel</a></div>
+      <div class="nav-item bounce"><a href="#fredericksburg">Fredericksburg</a></div>
+      <div class="nav-item bounce"><a href="#registry">Registry</a></div>
+      <div class="nav-item bounce"><a href="#rsvp">RSVP</a></div>
+    </amp-carousel>
   </nav>
   <main>
     <section class="center">
