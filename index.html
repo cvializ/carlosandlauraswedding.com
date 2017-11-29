@@ -9,6 +9,15 @@
   <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
   <link href="https://fonts.googleapis.com/css?family=Rouge+Script&text=LaurndClos%26%20" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Goudy+Bookletter+1911&text=1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz!%3F%26%20()—’,.:%22" rel="stylesheet" type="text/css">
+
+  <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon.png?v=oLdOELbgly">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=oLdOELbgly">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v=oLdOELbgly">
+  <link rel="manifest" href="/manifest.json?v=oLdOELbgly">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg?v=oLdOELbgly" color="#5bbad5">
+  <link rel="shortcut icon" href="/favicon.ico?v=oLdOELbgly">
+  <meta name="theme-color" content="#ccfffc">
+
   <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
   <style amp-custom>
   :root {
@@ -32,7 +41,7 @@
   }
 
   main {
-    margin: 0 auto 30px;
+    margin: 0 auto 60px;
     max-width: 768px;
     padding: 0 var(--main-padding);
   }
@@ -46,6 +55,10 @@
 
   section {
     min-height: 100px;
+  }
+
+  footer {
+    margin: 30px 0;
   }
 
   address {
@@ -156,6 +169,12 @@
     background-size: 250px 100px;
     background-position: 0 -15px;
     background-repeat: no-repeat;
+  }
+
+  .ellipse-fade {
+    -webkit-mask-image: radial-gradient(ellipse, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 70%);
+    mask-image: radial-gradient(ellipse, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 70%);
+    border-radius: 50%;
   }
 
   .watercolor-text {
@@ -294,25 +313,24 @@
     line-height: 1.5em;
   }
 
+  amp-img noscript img {
+    width: 100%;
+    height: 100%;
+  }
+
   amp-img [placeholder] {
-    background-size: 100%;
+    display: none;
+  }
+
+  [amp-version] amp-img [placeholder] {
+    display: block;
     opacity: 1;
     transition: opacity 300ms linear;
   }
 
-  amp-img [placeholder].amp-hidden.amp-hidden {
+  [amp-version] amp-img [placeholder].amp-hidden.amp-hidden {
     visibility: visible;
     opacity: 0;
-  }
-
-  .beach-peeps [placeholder] {
-    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="680" height="1024"><filter id="a"><feGaussianBlur in="SourceGraphic" stdDeviation="25"/></filter><path fill="#858e96" d="M0 0h680v1024H0z"/><g filter="url(#a)"><g fill-opacity=".5"><path d="M606 802l-420-36 44-660z"/><path fill="#f0fcff" d="M50-62L-62 834l292-252z"/><path fill="#daf2ff" d="M742 330L566 906 446-62z"/><path fill="#040000" d="M182 278L498 62 230 690z"/><path fill="#95c3d9" d="M-62 246L86-62l288 288z"/><path d="M342 882l36-628-184-16z"/><path fill="#7abddf" d="M694 166L-62 14l748-76z"/><path fill="#f0feff" d="M274 590l-36 192 60-8z"/><path fill="#ced7de" d="M434 854l8-276 76 292z"/><path fill="#0b0000" d="M290 166l48-80 140 88z"/><path d="M402 670L298 518l200-12zm72 36l76 180-28-368z"/><path fill="#e8effc" d="M150 594l40-404-252 124z"/><path fill="#dfe7f8" d="M742 78v684L478 478z"/><path fill="#c5d8e9" d="M350 786l12-192 40 196z"/><path fill="#d6cbc1" d="M6 854l424 92-292 32z"/><path fill="#f2bb94" d="M342 174l-168 8 260 84z"/><path fill="#000002" d="M382 798l48-172 8 212z"/><path fill="#90949f" d="M650 1066V594l-136 68z"/><path fill="#98a0ac" d="M514 174L366 514l176-8z"/><path fill="#10100f" d="M366 190L174 358l176 428z"/><path fill="#71a2bb" d="M286 186L58-62-62 190z"/><path fill="#b4b5bd" d="M214 434l-48 356-228-16z"/><path fill="#72a2b9" d="M478 190L406-62l336 252z"/><path fill="#160000" d="M250 666l-52 220-4-116z"/></g></g></svg>');
-  }
-  .kiss-peeps [placeholder] {
-    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="680" height="1024"><filter id="a"><feGaussianBlur in="SourceGraphic" stdDeviation="5"/></filter><path fill="#8d8770" d="M0 0h680v1024H0z"/><g filter="url(#a)" transform="matrix(4 0 0 4 2 2)" fill-opacity=".5"><path d="M73 23L41 255l121 10z"/><path fill="#fff" d="M-16 126L185 7 2-16z"/><path fill="#fffffc" d="M185-16L-16 2l183 83z"/><path fill="#020000" d="M88 31L22 136l131 135z"/><path fill="#1b1205" d="M129 71L60 46l31 225z"/><path fill="#ffffe6" d="M91-16L19 155-16-1z"/><path fill="#fff1bf" d="M52 163l-68-1 72 81z"/><path fill="#ffffd1" d="M185-1L8-16 147 87z"/><path d="M185 252L63 164l-6 107z"/><path fill="#c9c8ac" d="M185 120l-60-18-14 72z"/><path fill="#413524" d="M28 162l114-63-68-60z"/><path fill="#ffe2aa" d="M-16 161l58 4-37 83z"/><path fill="#fffff8" d="M-16 100l95-63L3-16z"/><path fill="#170e00" d="M-12 253l110-21 87 38z"/><path fill="#040200" d="M170 157l-64 2 29-11z"/><path fill="#b4c1b0" d="M149 197l-36-35 72-4z"/><path fill="#fffcc3" d="M185 58l-62 35 14-105z"/><path fill="#96927d" d="M62 191l-7 56-55-33z"/><path fill="#4b4632" d="M77 98l108-24v29z"/><path fill="#ffffde" d="M89 85l-3 19 10-3z"/><path fill="#dab976" d="M22 154L-9 79l59 1z"/><path fill="#442b0b" d="M-12 124l54 14-43 6z"/><path fill="#0c0c05" d="M104 55l22 23-12 66z"/><path fill="#fffccf" d="M98 11l-4 60 38-61z"/><path d="M70 42l28 10-37 9z"/></g></svg>');
-  }
-  .tree-peeps [placeholder] {
-    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="680" height="1024"><filter id="a"><feGaussianBlur in="SourceGraphic" stdDeviation="25"/></filter><path fill="#4a4c45" d="M0 0h680v1024H0z"/><g filter="url(#a)" fill-opacity=".5"><path fill="#fff" d="M530-62l212 460-588 236z"/><path d="M2 1086V282l740 720z"/><path fill="#ffffea" d="M170 674l572-404-356-40z"/><path d="M278 190L22 1062-10-62z"/><path fill="#000009" d="M714 686l-352 400 24-676z"/><path fill="#bcd5fd" d="M346 642l-172 20 52-260z"/><path fill="#6e827b" d="M298 294L742 38 274-62z"/><path fill="#ffffef" d="M710 226l28 272-420-244z"/><path fill="#737d72" d="M270 258l472-36-88-284z"/><path fill="#776b2d" d="M318 406l424 48-304 76z"/><path d="M74-62L-62 558l288 260z"/><path fill="#b6a8b2" d="M570 874l80 128h-80z"/><path fill="#592f1e" d="M366 278L78 314l248 112z"/><path fill="#ffffd9" d="M346 214l396 216-364-4z"/><path fill="#e1efff" d="M358 434L190 610l16-184z"/><path fill="#ccd77f" d="M602-62L326 34l416 4z"/><path fill="#000113" d="M90 746l456-156 88 332z"/><path fill="#46597d" d="M482 42L214 214 742 94z"/><path d="M334 262l-76 144-172 84z"/><path fill="#725f5e" d="M394 638L254 506l-8 92z"/><path fill="#b7bb6d" d="M270 182l220 68-188 4z"/><path fill="#d6e3f4" d="M398 506l-68 92-92-180z"/><path fill="#4b5930" d="M522 414l96 388 124-340z"/><path fill="#ffffe1" d="M742 466L346 342l364-140z"/><path fill="#1f1a0e" d="M-62 210L166-62l144 352z"/></g></svg>');
   }
   </style>
 </head>
@@ -344,7 +362,7 @@
           noloading
         >
           <noscript><img class="post-card-image" src="/img/beach-peeps.jpg" /></noscript>
-          <div placeholder></div>
+          <svg placeholder xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 1024"><filter id="a"><feGaussianBlur in="SourceGraphic" stdDeviation="25"/></filter><path fill="#858e96" d="M0 0h680v1024H0z"/><g filter="url(#a)"><g fill-opacity=".5"><path d="M606 802l-420-36 44-660z"/><path fill="#f0fcff" d="M50-62L-62 834l292-252z"/><path fill="#daf2ff" d="M742 330L566 906 446-62z"/><path fill="#040000" d="M182 278L498 62 230 690z"/><path fill="#95c3d9" d="M-62 246L86-62l288 288z"/><path d="M342 882l36-628-184-16z"/><path fill="#7abddf" d="M694 166L-62 14l748-76z"/><path fill="#f0feff" d="M274 590l-36 192 60-8z"/><path fill="#ced7de" d="M434 854l8-276 76 292z"/><path fill="#0b0000" d="M290 166l48-80 140 88z"/><path d="M402 670L298 518l200-12zm72 36l76 180-28-368z"/><path fill="#e8effc" d="M150 594l40-404-252 124z"/><path fill="#dfe7f8" d="M742 78v684L478 478z"/><path fill="#c5d8e9" d="M350 786l12-192 40 196z"/><path fill="#d6cbc1" d="M6 854l424 92-292 32z"/><path fill="#f2bb94" d="M342 174l-168 8 260 84z"/><path fill="#000002" d="M382 798l48-172 8 212z"/><path fill="#90949f" d="M650 1066V594l-136 68z"/><path fill="#98a0ac" d="M514 174L366 514l176-8z"/><path fill="#10100f" d="M366 190L174 358l176 428z"/><path fill="#71a2bb" d="M286 186L58-62-62 190z"/><path fill="#b4b5bd" d="M214 434l-48 356-228-16z"/><path fill="#72a2b9" d="M478 190L406-62l336 252z"/><path fill="#160000" d="M250 666l-52 220-4-116z"/></g></g></svg>
         </amp-img>
 
         <amp-img
@@ -355,9 +373,8 @@
           height="3"
           noloading
         >
-          <!-- sizes="(max-width: 768px) calc((100vw - 50px) / 3), calc((768px - 20px) / 3)" -->
           <noscript><img class="post-card-image" src="/img/kiss-peeps.jpg" /></noscript>
-          <div placeholder></div>
+          <svg placeholder xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 1024"><filter id="a"><feGaussianBlur in="SourceGraphic" stdDeviation="5"/></filter><path fill="#8d8770" d="M0 0h680v1024H0z"/><g filter="url(#a)" transform="matrix(4 0 0 4 2 2)" fill-opacity=".5"><path d="M73 23L41 255l121 10z"/><path fill="#fff" d="M-16 126L185 7 2-16z"/><path fill="#fffffc" d="M185-16L-16 2l183 83z"/><path fill="#020000" d="M88 31L22 136l131 135z"/><path fill="#1b1205" d="M129 71L60 46l31 225z"/><path fill="#ffffe6" d="M91-16L19 155-16-1z"/><path fill="#fff1bf" d="M52 163l-68-1 72 81z"/><path fill="#ffffd1" d="M185-1L8-16 147 87z"/><path d="M185 252L63 164l-6 107z"/><path fill="#c9c8ac" d="M185 120l-60-18-14 72z"/><path fill="#413524" d="M28 162l114-63-68-60z"/><path fill="#ffe2aa" d="M-16 161l58 4-37 83z"/><path fill="#fffff8" d="M-16 100l95-63L3-16z"/><path fill="#170e00" d="M-12 253l110-21 87 38z"/><path fill="#040200" d="M170 157l-64 2 29-11z"/><path fill="#b4c1b0" d="M149 197l-36-35 72-4z"/><path fill="#fffcc3" d="M185 58l-62 35 14-105z"/><path fill="#96927d" d="M62 191l-7 56-55-33z"/><path fill="#4b4632" d="M77 98l108-24v29z"/><path fill="#ffffde" d="M89 85l-3 19 10-3z"/><path fill="#dab976" d="M22 154L-9 79l59 1z"/><path fill="#442b0b" d="M-12 124l54 14-43 6z"/><path fill="#0c0c05" d="M104 55l22 23-12 66z"/><path fill="#fffccf" d="M98 11l-4 60 38-61z"/><path d="M70 42l28 10-37 9z"/></g></svg>
         </amp-img>
 
         <amp-img
@@ -369,7 +386,7 @@
           noloading
           >
           <noscript><img class="post-card-image" src="/img/tree-peeps.jpg" /></noscript>
-          <div placeholder></div>
+          <svg placeholder xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 1024"><filter id="a"><feGaussianBlur in="SourceGraphic" stdDeviation="25"/></filter><path fill="#4a4c45" d="M0 0h680v1024H0z"/><g filter="url(#a)" fill-opacity=".5"><path fill="#fff" d="M530-62l212 460-588 236z"/><path d="M2 1086V282l740 720z"/><path fill="#ffffea" d="M170 674l572-404-356-40z"/><path d="M278 190L22 1062-10-62z"/><path fill="#000009" d="M714 686l-352 400 24-676z"/><path fill="#bcd5fd" d="M346 642l-172 20 52-260z"/><path fill="#6e827b" d="M298 294L742 38 274-62z"/><path fill="#ffffef" d="M710 226l28 272-420-244z"/><path fill="#737d72" d="M270 258l472-36-88-284z"/><path fill="#776b2d" d="M318 406l424 48-304 76z"/><path d="M74-62L-62 558l288 260z"/><path fill="#b6a8b2" d="M570 874l80 128h-80z"/><path fill="#592f1e" d="M366 278L78 314l248 112z"/><path fill="#ffffd9" d="M346 214l396 216-364-4z"/><path fill="#e1efff" d="M358 434L190 610l16-184z"/><path fill="#ccd77f" d="M602-62L326 34l416 4z"/><path fill="#000113" d="M90 746l456-156 88 332z"/><path fill="#46597d" d="M482 42L214 214 742 94z"/><path d="M334 262l-76 144-172 84z"/><path fill="#725f5e" d="M394 638L254 506l-8 92z"/><path fill="#b7bb6d" d="M270 182l220 68-188 4z"/><path fill="#d6e3f4" d="M398 506l-68 92-92-180z"/><path fill="#4b5930" d="M522 414l96 388 124-340z"/><path fill="#ffffe1" d="M742 466L346 342l364-140z"/><path fill="#1f1a0e" d="M-62 210L166-62l144 352z"/></g></svg>
         </amp-img>
       </div>
       <h1 class="cursive watercolor-text">Laura & Carlos</h1>
@@ -380,7 +397,7 @@
     </section>
     <section id="wedding">
       <h2>Ceremony & Reception</h2>
-      <p>Saturday, August 25, 2018 at <time>5:30PM</time></p>
+      <p>Saturday, August 25, 2018 at <time>5:00PM</time></p>
       <address>
         <p><a href="http://www.innattheoldesilkmill.com/about-us/">Inn at the Old Silk Mill</a></p>
         <p>1707 Princess Anne St.</p>
@@ -430,14 +447,16 @@
 
     <section id="fredericksburg">
       <h2>Fredericksburg</h2>
+      <p>We put together some awesome suggestions for places to eat, tour and enjoy in our home town.</p>
+      <p><a href="https://docs.google.com/document/d/1h0GpK56_C1yQdbAdrBDy7YPk5sQi17zLKeaxjBOEPxk/edit?usp=sharing">Check out our doc</a>
     </section>
 
     <section id="registry">
       <h2>Registry</h2>
       <p>For those who would like to purchase a gift for the bride and groom, please find our online registries below:</p>
       <ul>
-        <li><a href="#">Amazon</a></li>
-        <li><a href="#">Bed Bath and Beyond, or whatever</a></li>
+        <li><a href="https://www.amazon.com/wedding/share/carlosandlauraswedding">Amazon</a></li>
+        <li><a href="https://www.bedbathandbeyond.com:443/store/giftregistry/view_registry_guest.jsp?registryId=545287465&eventType=Wedding">Bed Bath and Beyond</a></li>
       </ul>
 
       <p>
@@ -463,7 +482,14 @@
     </section>
     <section id="rsvp">
       <h2>RSVP</h2>
-      <a href="https://docs.google.com/forms/d/e/1FAIpQLScJkuIVq9z0bVwXPzNkbRzs1USqdyrqM7oTiIb0vhQY7ohOuA/viewform">Fill out our RSVP form!</a>
+      <p>You can fill out our <a href="https://docs.google.com/forms/d/e/1FAIpQLScJkuIVq9z0bVwXPzNkbRzs1USqdyrqM7oTiIb0vhQY7ohOuA/viewform">online RSVP form</a>!</p>
+      <p>If you have any questions, feel free to email us at <a href="mailto:carlosandlauraswedding@gmail.com">carlosandlauraswedding@gmail.com</a></p>
+    </section>
+    <footer class="ellipse-fade">
+      <amp-img layout="responsive" width="1189" height="391" src="/img/stache-crop.jpg">
+        <noscript><img src="/img/stache-crop.jpg"/></noscript>
+      </amp-img>
+    </footer>
   </main>
 </body>
 </html>
