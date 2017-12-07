@@ -8,7 +8,7 @@
   <link rel="canonical" href="https://www.carlosandlauraswedding.com/">
   <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
   <link href="https://fonts.googleapis.com/css?family=Rouge+Script&text=LaurndClos%26%20" rel="stylesheet" type="text/css">
-  <link href="https://fonts.googleapis.com/css?family=Goudy+Bookletter+1911&text=1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz!%3F%26%20()—’,.:%22" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Goudy+Bookletter+1911&text=1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz!%3F%26%20()—’,.:%22»" rel="stylesheet" type="text/css">
 
   <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon.png?v=oLdOELbgly">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=oLdOELbgly">
@@ -77,6 +77,19 @@
 
   amp-carousel {
     margin-left: 15px;
+  }
+
+  li {
+    position: relative;
+    list-style: none;
+  }
+
+  li:before {
+    content: '»';
+    margin-left: -22px;
+    position: absolute;
+    font-size: 1.5em;
+    transform: translateY(-25%);
   }
 
   .nav-item {
