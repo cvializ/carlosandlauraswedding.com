@@ -32,8 +32,10 @@
   .wrapper {
     font-family: "Goudy Bookletter 1911", Palatino, "Times New Roman", serif;
     font-size: 125%;
-    background-image: url(img/matte.jpg);
     color: #333;
+  }
+  body, .wrapper {
+    background-image: url(img/matte.jpg);
   }
 
   .cursive {
@@ -41,9 +43,9 @@
   }
 
   main {
-    margin: 0 auto 30px;
+    margin: 0 auto;
     max-width: 768px;
-    padding: 0 var(--main-padding);
+    padding: 0 var(--main-padding) 30px;
   }
 
   nav {
